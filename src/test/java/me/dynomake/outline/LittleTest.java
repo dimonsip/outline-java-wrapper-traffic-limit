@@ -1,8 +1,6 @@
 package me.dynomake.outline;
 
-import me.dynomake.outline.model.BytesDataLimit;
 import me.dynomake.outline.model.MetricMap;
-import me.dynomake.outline.model.SetDataLimit;
 
 
 public class LittleTest {
@@ -23,10 +21,7 @@ public class LittleTest {
             System.out.println("OutlineKeyId: " + key + ", BytesUsed: " + value);
         });
 
-        BytesDataLimit bytesDataLimit = new BytesDataLimit(200L * 1024 * 1024);
-        SetDataLimit dataLimit = new SetDataLimit(bytesDataLimit);
-
-        Boolean result = outlineWrapper.setKeyDataLimit(120, dataLimit);
+        Boolean result = outlineWrapper.setKeyDataLimit(120, 200L * 1024 * 1024);
         System.out.println("Datalimit setted result: " + result.toString());
 
 

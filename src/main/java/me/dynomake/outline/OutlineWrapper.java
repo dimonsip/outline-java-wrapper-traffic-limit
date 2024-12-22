@@ -24,6 +24,6 @@ public interface OutlineWrapper {
     boolean removeKey(int keyIdentifier);
     OutlineServer getServerInformation();
     MetricMap getMetrics();
-    boolean setKeyDataLimit(int keyIdentifier, SetDataLimit limit);
+    boolean setKeyDataLimit(int keyIdentifier, Long bytes);
 
 }

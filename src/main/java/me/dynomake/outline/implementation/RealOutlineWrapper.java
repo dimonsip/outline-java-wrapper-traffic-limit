@@ -64,8 +64,10 @@ public class RealOutlineWrapper implements OutlineWrapper {
     }
 
     @Override
-    public boolean setKeyDataLimit(int keyIdentifier, SetDataLimit limit) {
-        return getResponse("/access-keys/" + keyIdentifier + "/data-limit", "PUT", GsonUtil.parseJson(limit)).responseCode == 204;
+    public boolean setKeyDataLimit(int keyIdentifier, Long bytes) {
+        BytesDataLimit bytesDataLimit = new BytesDataLimit(bytes);
+        SetDataLimit dataLimit = new SetDataLimit(bytesDataLimit);
+        return getResponse("/access-keys/" + keyIdentifier + "/data-limit", "PUT", GsonUtil.parseJson(dataLimit)).responseCode == 204;
     }
 
     private Response getResponse(@NonNull String requestAddress, @NonNull String method, String writableJson) {
