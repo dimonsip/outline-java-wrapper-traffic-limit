@@ -14,7 +14,7 @@ maven {
 ```
 Depend:
 ```groovy
-implementation 'io.github.dynomake:outline-java-wrapper:1.0.2'
+implementation("org.clojars.dimonsip:outline-java-wrapper:1.0.3")
 ```
 
 ### | `Maven`:
@@ -33,11 +33,10 @@ Depend:
 ```xml
 
 <dependency>
-    <groupId>io.github.dynomake</groupId>
+    <groupId>org.clojars.dimonsip</groupId>
     <artifactId>outline-java-wrapper</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 </dependency>
 ```
 
 ### | `Donations`:
-If you want to support my pet-projects and open-source projects, you always can send me crypro to my USDC wallet address on POLYGON network: `0xAE8840E02C52F4a289af083465d78C2329E6ca7B`
