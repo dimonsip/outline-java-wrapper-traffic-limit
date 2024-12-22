@@ -1,3 +1,13 @@
+# Outline Java Wrapper Traffic Limit
+
+Fork of [outline-java-wrapper](https://github.com/dynomake/outline-java-wrapper) created by Valeriy Shushpanov.  
+This fork introduces traffic limit functionality while keeping the original features intact.
+
+## License
+This project is licensed under the [MIT License](https://github.com/dimonsip/outline-java-wrapper-traffic-limit/blob/master/LICENSE).  
+Original project copyright: © 2023 Valeriy Shushpanov (dynomake).  
+Fork modifications copyright: © 2024 Dmitry Sipin (dimonsip).
+
 ## | `Outline Server API wrapper`
 Library for working with Outline remote servers in Java.
 * [Usage Example](https://github.com/dynomake/outline-java-wrapper/blob/master/.github/USAGE.md)

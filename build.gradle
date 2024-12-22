@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'org.clojars.dimonsip'
-version '1.0.3'
+version '1.0.4'
 
 sourceCompatibility = 17
 targetCompatibility = 17
@@ -40,10 +40,21 @@ publishing {
             from(components.java)
 
             pom {
+                name = 'Outline Java Wrapper with Traffic Limit'
+                description = 'Fork of outline-java-wrapper with additional traffic limit functionality'
+                url = 'https://github.com/dimonsip/outline-java-wrapper-traffic-limit'
                 licenses {
                     license {
                         name = 'MIT License'
-                        url = 'https://github.com/dynomake/outline-java-wrapper/blob/master/LICENSE'
+                        url = 'https://github.com/dimonsip/outline-java-wrapper-traffic-limit/blob/master/LICENSE'
+                        distribution = 'repo'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'dimonsip'
+                        name = 'Dmitry Sipin'
+                        url = 'https://github.com/dimonsip'
                     }
                 }
             }
