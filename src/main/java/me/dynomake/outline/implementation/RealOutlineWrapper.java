@@ -5,9 +5,7 @@ import lombok.NonNull;
 import me.dynomake.outline.OutlineWrapper;
 import me.dynomake.outline.gson.GsonUtil;
 import me.dynomake.outline.implementation.model.Name;
-import me.dynomake.outline.model.OutlineKey;
-import me.dynomake.outline.model.OutlineKeyList;
-import me.dynomake.outline.model.OutlineServer;
+import me.dynomake.outline.model.*;
 import me.dynomake.outline.implementation.model.Response;
 
 import javax.net.ssl.*;
@@ -19,7 +17,6 @@ import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.Scanner;
-import java.util.function.Consumer;
 
 /**
  * Outline Java Wrapper written by dynomake developer.
@@ -59,6 +56,16 @@ public class RealOutlineWrapper implements OutlineWrapper {
     @Override
     public OutlineServer getServerInformation() {
         return GsonUtil.unparseJson(getResponse("/server", "GET", null).responseString, OutlineServer.class);
+    }
+
+    @Override
+    public MetricMap getMetrics() {
+        return GsonUtil.unparseJson(getResponse("/metrics/transfer", "GET", null).responseString, MetricMap.class);
+    }
+
+    @Override
+    public boolean setKeyDataLimit(int keyIdentifier, SetDataLimit limit) {
+        return getResponse("/access-keys/" + keyIdentifier + "/data-limit", "PUT", GsonUtil.parseJson(limit)).responseCode == 204;
     }
 
     private Response getResponse(@NonNull String requestAddress, @NonNull String method, String writableJson) {

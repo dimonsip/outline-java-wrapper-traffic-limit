@@ -2,9 +2,9 @@ package me.dynomake.outline;
 
 import lombok.NonNull;
 import me.dynomake.outline.implementation.RealOutlineWrapper;
-import me.dynomake.outline.model.OutlineKey;
-import me.dynomake.outline.model.OutlineKeyList;
-import me.dynomake.outline.model.OutlineServer;
+import me.dynomake.outline.model.*;
+
+import java.math.BigInteger;
 
 /**
  * Outline Java Wrapper written by dynomake developer.
@@ -23,5 +23,7 @@ public interface OutlineWrapper {
     void renameKey(int keyIdentifier, @NonNull String name);
     boolean removeKey(int keyIdentifier);
     OutlineServer getServerInformation();
+    MetricMap getMetrics();
+    boolean setKeyDataLimit(int keyIdentifier, SetDataLimit limit);
 
 }
